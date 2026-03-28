@@ -143,3 +143,42 @@ The goal is a system that agrees with itself. The engine is how you get there, n
 **Artifact can't be read (no access, private repo, external service):** Mark the touchpoint as UNRESOLVED. Document what access is needed. The owner either provides access or accepts the risk of an unchecked touchpoint.
 
 **Owner adds manual checks:** After reviewing the generated checklist, the owner may add checks Claude missed — business rules, contractual obligations, compliance requirements that aren't in any artifact. These are valid checks and get the same PASS/FAIL treatment.
+
+## Multi-PRD Reconciliation
+
+When multiple PRDs share a product ecosystem, Phase 9 expands from per-PRD validation to cross-system reconciliation. The engine methodology is the same — collect touchpoints, resolve artifacts, generate checks, run the checklist — but the scope is wider.
+
+### When to Run Cross-System Reconciliation
+
+- Two or more PRDs reference each other in dependency tables
+- A change to one PRD could invalidate decisions in another
+- A shared reference document (metric dictionary, entity model) has been updated since the last per-PRD review
+
+### How It Differs from Per-PRD Reconciliation
+
+**Scope:** Load ALL PRDs and shared reference documents simultaneously. The "artifact" being checked is the full system, not a single document.
+
+**Touchpoint sources expand:**
+- Per-PRD sources (obligation tags, dependency tables, MODIFY components) still apply
+- Add: cross-PRD dependency tables from every PRD
+- Add: shared reference documents (metric dictionaries, entity models, config schemas)
+- Add: Build Sequence cross-PRD dependencies (Prerequisites, Unlocks, Dependencies)
+
+**Check categories expand:**
+- All per-PRD integrity checks still apply
+- Add: terminology consistency across ALL PRDs (same field name, same role name, same metric name everywhere)
+- Add: data flow consistency (if PRD A says it provides X to PRD B, does PRD B's dependency table say it consumes X from PRD A?)
+- Add: permission model consistency (do all PRDs agree on who can see/do what?)
+- Add: Build Sequence dependency bidirectionality (every Unlocks has a matching Dependencies, and vice versa)
+
+### Parallel Agent Pattern
+
+For systems with 3+ PRDs, run reconciliation with parallel agents:
+1. Split the system into overlapping pairs (A↔B, B↔C, A↔C)
+2. Each agent checks one pair in depth
+3. Deduplicate findings across agents
+4. Walk findings one by one with the owner — same resolution process as per-PRD
+
+### Artifact
+
+The reconciliation pass for a multi-PRD system is a single cross-system document (not per-PRD). It records: all documents validated, all findings by severity, all resolutions, and all new decisions locked. Stored alongside the PRDs.

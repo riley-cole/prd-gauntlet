@@ -19,13 +19,28 @@ Universal structure for product requirements documents. This format produces spe
 
 ## Sections (in order)
 
-Every PRD contains these eight sections, in this order. No section is optional in a finalized PRD.
+Every PRD contains these nine sections, in this order. No section is optional in a finalized PRD.
 
 ### 1. Problem Statement
 What gap exists, from the user's perspective. 2-3 paragraphs max. No solution details here — just the pain point, who feels it, and why it matters.
 
+No document scope language. The Problem Statement describes the user's pain, not what this document covers. "This PRD defines..." belongs nowhere in this section. If you catch yourself writing "This document..." or "This PRD...", you've crossed from problem into scope — move that language to the Doc Index.
+
 ### 2. Solution
 How the product solves the problem. High-level architecture, role model, navigation model, scope boundaries. Concise but complete enough that an engineer understands the shape before reading details. This is the "30-second briefing" — someone should be able to read this section alone and know what they're building.
+
+### 2.5 Doc Index
+Concise map of the document for the reader. One line per section describing what's in it. The reader should know the shape of the document from this section alone — what's covered, how many stories, how many slices, what companion docs exist.
+
+Format: compact list. Section name bolded, one-line description. Covers every major section that follows.
+
+Example:
+- **User Stories** — 58 stories across 12 domains: user management, store config, financial settings, academic calendar.
+- **Implementation Decisions** — Auth model, data architecture, permission boundaries, integration points.
+- **Build Sequence** — 9 vertical slices with prerequisites, done criteria, and cross-PRD unlock annotations.
+- **Companion Documents** — Related PRDs, reference docs, reconciliation artifacts.
+
+The Doc Index is not optional in a finalized PRD. It replaces any "this PRD defines..." language that might otherwise leak into the Problem Statement.
 
 ### 3. User Stories
 Exhaustive numbered list, grouped by domain/surface area. Format: "As an [actor], I want [feature], so that [benefit]."
@@ -83,6 +98,8 @@ The recommended build order for engineering. Two parts: Integration Boundaries a
 **Vertical Slices** define the ordered sequence of demoable increments. Each slice is a thin, complete path through every integration layer. Each slice references which user stories it covers, what's demoable when it ships, its dependencies on prior slices, and product-level acceptance criteria.
 
 Slice 1 should always be a walking skeleton — the thinnest end-to-end path that proves the architecture connects. Subsequent slices add capability on top of the proven foundation.
+
+Each slice includes: Stories, Demoable outcome, Dependencies (intra-PRD and cross-PRD), Unlocks (downstream slices enabled by completion), Acceptance criteria (product behaviors), and Done criteria (pass/fail engineering test checklist). See `references/build_sequence.md` for the full slice format.
 
 This section does NOT specify: file names, function names, internal APIs, database schema details, test structure, or layer-by-layer build order within a slice. Those are engineering decisions.
 

@@ -101,3 +101,33 @@ Real failure patterns from running the gauntlet. Each gotcha describes a specifi
 **Why it matters:** Engineers build what the spec says. If the spec uses three names for one thing, they may build three things — or, more likely, pick one name and leave the other two as dead references that confuse everyone later.
 
 **What to do instead:** Establish terminology in Phase 1 (from the project config or during intake). Use those exact terms everywhere. The reconciliation engine in Phase 9 checks terminology consistency, but catching drift early is cheaper than fixing it in Phase 9.
+
+---
+
+## Doc Overview Language in Problem Statement
+
+**The failure:** The Problem Statement opens with the user's pain, then drifts into "This PRD defines the complete analytics and reporting experience within HomeRoom." That's document scope, not the problem. It tells the reader what the document covers, not what gap exists.
+
+**Why it matters:** The Problem Statement is the foundation every subsequent decision is evaluated against. If it blends pain with scope, the stress test (Phase 4) loses its anchor — you're testing whether the document is right, not whether the solution is right.
+
+**What to do instead:** Keep the Problem Statement pure. Who feels the pain, what the pain is, why it matters. No "this document," no "this PRD," no solution hints. Document scope belongs in the Doc Index (Section 2.5), which exists specifically to tell the reader what's in the document.
+
+---
+
+## Missing Done Criteria on Slices
+
+**The failure:** Build Sequence slices have acceptance criteria ("Dashboard shows KPI cards") but no done criteria ("KPI card shows correct value matching manual sum of transactions"). Engineers know what to build but not how to verify it's built correctly.
+
+**Why it matters:** Without done criteria, "done" is a judgment call. One engineer thinks the slice is shipped, another thinks it needs more testing, the PM thinks it was done two days ago. Done criteria are the contract — every box checked means the slice is landed and downstream work can begin.
+
+**What to do instead:** Every slice gets both acceptance criteria (product behaviors) and done criteria (pass/fail tests). Done criteria must be testable, pass/fail, edge-case-aware, and data-contract-complete. If the slice produces data consumed downstream, there's a done criterion verifying the data is available. The format is a checkbox list — no ambiguity about what's left.
+
+---
+
+## Orphaned Cross-PRD Dependencies
+
+**The failure:** AdvisorLounge Slice 7 says "Unlocks: FrontOffice Slice 3" but FrontOffice Slice 3's Dependencies field doesn't mention AdvisorLounge Slice 7. The unlock chain is one-directional. An engineer reading only the downstream PRD misses the dependency.
+
+**Why it matters:** Cross-PRD dependencies are the highest-risk joints in a multi-PRD system. If they're only annotated on one side, the other side can be built against wrong assumptions. The double-blind audit exists specifically to catch these mismatches.
+
+**What to do instead:** Every cross-PRD dependency must be bidirectionally annotated. Upstream slice says "Unlocks: [downstream]." Downstream slice says "Dependencies: [upstream]." Both must name the specific slice and what data/config flows between them. After writing Build Sequences, run the double-blind audit pattern to verify all cross-references resolve in both directions.

@@ -194,7 +194,7 @@ Read `references/stress_test.md` for full methodology.
 
 **Goal:** Synthesize everything into a single build spec.
 
-- Scaffold from `templates/prd_skeleton.md`. Follow `references/prd_format.md`.
+- Scaffold from `templates/prd_skeleton.md`. Follow `references/prd_format.md`. Includes Doc Index section between Solution and User Stories.
 - Section 8 (Build Sequence): follow `references/build_sequence.md`. Integration boundaries first, then vertical slices. Slice 1 = walking skeleton.
 - Run proof protocol from `references/quality_bar.md` before presenting.
 
@@ -235,6 +235,8 @@ See `references/reconciliation_checklist.md` for engine methodology.
 5. **Run the checklist.** Record in `templates/reconciliation_pass.md`. Zero FAILs required.
 6. **Update doc index.**
 
+**Multi-PRD reconciliation:** When multiple PRDs share dependencies, run Phase 9 across all PRDs simultaneously — not per-PRD. Load the full system, generate cross-document checks, and walk findings one by one. Use the double-blind audit pattern from `references/build_sequence.md` for validation.
+
 **Process Ledger:** Append Phase 9 — touchpoint count, integrity check count, notable resolutions. Update Provenance.
 
 **Artifact:** All artifacts updated. Reconciliation pass with zero FAILs.
@@ -254,6 +256,7 @@ Follow `references/distribution_map.md`. Use project config's Distribution Targe
 4. **Verify** PRD's Companion Documents table includes both artifacts.
 5. Rebuild affected deliverables.
 6. Update doc index, open items tracker, decision log.
+7. **If multi-PRD:** create or update the Build Orchestration Plan alongside the PRDs. See `references/build_sequence.md` Multi-PRD section.
 
 **Artifact:** Finalized PRD in place, companions stored, deliverables rebuilt, index current.
 **Exit:** Owner confirms distribution complete.
@@ -284,6 +287,7 @@ The short version:
 - **"Cross-PRD validation"** — Phase 9
 - **"Finalize and ship"** — Phase 10
 - **"Run the full gauntlet"** — Phase 0 (if no config) through Phase 10
+- **Build Sequence audit:** "audit the build plan", "validate slices". Runs double-blind validation on existing Build Sequences — story coverage, dependency chains, unlock annotations, done criteria quality, orchestration plan accuracy.
 
 ## File Map
 

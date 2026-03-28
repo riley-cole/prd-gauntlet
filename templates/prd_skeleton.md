@@ -15,6 +15,12 @@
 
 <!-- How the product solves it. High-level architecture, role model, navigation model, scope boundaries. An engineer should understand the shape of the system from this section alone. -->
 
+## 2.5 Doc Index
+
+<!-- Concise map of the document. One line per section describing what's in it. -->
+<!-- The reader should know the shape of the document from this section alone. -->
+<!-- Format: compact list. Section name bolded, one-line description. -->
+
 ## 3. User Stories
 
 <!-- Exhaustive numbered list, grouped by domain/surface area. -->
@@ -74,6 +80,11 @@
 <!-- Product specifies: integration boundaries + ordered vertical slices. -->
 <!-- Product does NOT specify: file names, internal APIs, layer order within slices, test structure. -->
 
+### Prerequisites
+
+<!-- External dependencies that must exist before Slice 1 begins. -->
+<!-- Infrastructure, services, other PRD slices that must be complete. -->
+
 ### Integration Boundaries
 
 <!-- Four categories of product-level constraints: -->
@@ -90,12 +101,21 @@
 Stories: [numbers]
 Demoable: [one sentence — what a stakeholder can see/verify]
 Dependencies: None
+Unlocks: [downstream slices in this or other PRDs enabled by this slice's completion]
 Acceptance criteria:
 - [observable behavior]
+Done criteria:
+- [ ] [specific pass/fail test an engineer can run]
+- [ ] [edge case verification]
+- [ ] [permission boundary check]
+- [ ] [data contract: output available to consuming slices]
 
 **Slice 2: [Name]**
 Stories: [numbers]
 Demoable: [one sentence]
 Dependencies: Slice 1
+Unlocks: [downstream slices enabled by this slice's completion]
 Acceptance criteria:
 - [observable behavior]
+Done criteria:
+- [ ] [specific pass/fail test an engineer can run]
