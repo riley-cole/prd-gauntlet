@@ -1,0 +1,11 @@
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Auto-generated session logs from phase activity hook
+logs/
+
+# Project configs contain internal paths, terminology, and doc ecosystems.
+# Ship the example config (projects/example-saas-app.md) but exclude real ones.
+projects/*
+!projects/example-saas-app.md
