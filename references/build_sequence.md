@@ -126,7 +126,7 @@ Done criteria:
 
 ### Sequencing Strategies
 
-Claude recommends a strategy based on context. Owner can override.
+The agent recommends a strategy based on context. Owner can override.
 
 **Risk-first** — Build the hardest or most uncertain integration first. If it fails, you find out early before investing in dependent features. Default for features with uncertain architecture or unfamiliar integrations.
 

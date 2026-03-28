@@ -33,10 +33,11 @@ End-to-end process for taking a product concept from zero to a finalized, cross-
 
 1. **Load `references/operating_rules.md`** — behavioral rules for the entire gauntlet. Load once.
 2. **Load `references/gotchas.md`** — known failure patterns. Skim at start, reference when something feels off.
-3. **Identify the active project.** Check `projects/` for a matching config. Also check for `project_config.md` in an existing workspace.
-4. **If config exists:** read it, skip Phase 0, start at Phase 1.
-5. **If no config:** start with Phase 0.
-6. **Read the doc index** if one exists.
+3. **On platforms without hooks support** (Gemini/AntiGravity, Codex, etc.), also load `rules/quality_enforcement.md` — behavioral enforcement of the same gates the hooks provide on Claude Code. On Claude Code, the hooks fire automatically; this file is not needed.
+4. **Identify the active project.** Check `projects/` for a matching config. Also check for `project_config.md` in an existing workspace.
+5. **If config exists:** read it, skip Phase 0, start at Phase 1.
+6. **If no config:** start with Phase 0.
+7. **Read the doc index** if one exists.
 
 ## The Phases
 
@@ -75,7 +76,7 @@ Read everything available before asking a single question.
 
 *With project config:* config → doc index → entity model → relevant companion docs → prior PRDs.
 
-*If a codebase exists:* README/CLAUDE.md → `git log --oneline -30` → `git diff` → grep/glob for areas relevant to the idea → map services, models, routes, configs, schemas.
+*If a codebase exists:* README/CLAUDE.md/GEMINI.md (platform-specific project config) → `git log --oneline -30` → `git diff` → grep/glob for areas relevant to the idea → map services, models, routes, configs, schemas.
 
 *Cold start (after Phase 0):* read whatever the owner pointed to — existing folder, repo, source docs.
 
@@ -106,7 +107,7 @@ Synthesize into: what exists, where the idea lives, what it touches, constraints
 **Process Ledger:** Create from `templates/process_ledger.md`. Fill header and Phase 1 section. Update Provenance.
 
 **Artifact:** Ecosystem summary with artifact catalog. Process ledger created. Config populated.
-**Exit:** Owner confirms Claude understands the landscape.
+**Exit:** Owner confirms the agent understands the landscape.
 
 ---
 

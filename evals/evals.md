@@ -92,7 +92,7 @@ Test scenarios for each entry point. Use these to verify the skill loads the rig
 **Expected behavior:**
 - Phases 1-3 complete normally. Decision log has 20+ locked decisions.
 - Phase 4: Stress test identifies a better product approach (Question 3) that changes the scope significantly. Outcome: Reshaped.
-- Claude identifies which Phase 3 decisions are invalidated by the reshape. Documents the specific decisions affected.
+- The agent identifies which Phase 3 decisions are invalidated by the reshape. Documents the specific decisions affected.
 - Loops back to Phase 3 for a targeted re-grill — only the invalidated decisions, not the full decision tree.
 - New/changed decisions get new obligation tags where applicable.
 - Process ledger captures: Phase 4 reshape notes, then Phase 3 re-grill as a clearly labeled loop-back (not overwriting the original Phase 3 section).
@@ -106,7 +106,7 @@ Test scenarios for each entry point. Use these to verify the skill loads the rig
 - Phases 1-7 complete normally.
 - Phase 8: Cross-document validation finds that a Phase 3 decision contradicts a companion doc. The finding is a Blocker (Category 1: Direct Contradiction).
 - Resolution options presented to owner: change the PRD, change the companion doc, or revisit the original decision.
-- If the owner chooses to revisit: Claude documents the loop-back in the process ledger, re-grills the specific decision with the new evidence, locks a revised answer.
+- If the owner chooses to revisit: The agent documents the loop-back in the process ledger, re-grills the specific decision with the new evidence, locks a revised answer.
 - The revised decision may create new obligation tags requiring Phase 9 to check additional touchpoints.
 - Phase 8 continues with remaining findings after the loop-back is resolved.
 
@@ -115,7 +115,7 @@ Test scenarios for each entry point. Use these to verify the skill loads the rig
 **Trigger:** "Adversarial review on this doc" — owner provides a PRD file but no project config or workspace exists
 **Project:** None
 **Expected behavior:**
-- No project config found. Claude needs to run Phase 8 but has no workspace context.
+- No project config found. The agent needs to run Phase 8 but has no workspace context.
 - Runs a lightweight Phase 0: creates a minimal workspace alongside the existing PRD file (or in cwd). Scaffolds the folder structure. Creates a starter config populated with whatever can be inferred from the PRD itself (product name, audience from the header block, companion docs from Section 7).
 - Does NOT run the full Phase 0 briefing — the owner asked for adversarial review, not the gauntlet. Keep it fast.
 - Proceeds to Phase 8. Attempts to load companion docs referenced in the PRD's dependency tables. Flags any that can't be found as UNRESOLVED.

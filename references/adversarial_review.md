@@ -95,7 +95,7 @@ Format each finding using the template in `templates/adversarial_finding.md`. Nu
 
 Present to owner in order: all Blockers first (categories 1-3), then Warnings (4-5), then Editorial (6). Within each severity level, present in category order.
 
-For each finding, lead with a recommendation. The owner decides, but Claude goes first.
+For each finding, lead with a recommendation. The owner decides, but the agent goes first.
 
 ## Adapting the Review
 

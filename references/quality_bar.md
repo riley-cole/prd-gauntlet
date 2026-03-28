@@ -1,6 +1,6 @@
 # Quality Bar
 
-Universal quality standards for any PRD produced by this skill. These apply regardless of project, product, or audience. For behavioral rules governing how Claude operates throughout the gauntlet (response posture, questioning discipline, file conventions), see `operating_rules.md`. This file covers what the artifact must achieve — `operating_rules.md` covers how Claude should behave while building it.
+Universal quality standards for any PRD produced by this skill. These apply regardless of project, product, or audience. For behavioral rules governing how the agent operates throughout the gauntlet (response posture, questioning discipline, file conventions), see `operating_rules.md`. This file covers what the artifact must achieve — `operating_rules.md` covers how the agent should behave while building it.
 
 ## Spec Completeness
 

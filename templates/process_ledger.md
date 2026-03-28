@@ -68,7 +68,7 @@ Append each section as its phase completes. Do not backfill or rewrite earlier s
 
 **Decision [N]: [Question]**
 Alternatives considered: [list]
-Recommendation: [what Claude recommended and why]
+Recommendation: [what the agent recommended and why]
 Locked answer: [what the owner decided]
 Obligation tag: [if applicable — artifact touched, location, current state]
 

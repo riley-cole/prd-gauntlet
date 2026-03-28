@@ -1,6 +1,6 @@
 # Gotchas
 
-Real failure patterns from running the gauntlet. Each gotcha describes a specific way Claude tends to go wrong, why it matters, and what to do instead. Check this file when something feels off — odds are the pattern is documented here.
+Real failure patterns from running the gauntlet. Each gotcha describes a specific way the agent tends to go wrong, why it matters, and what to do instead. Check this file when something feels off — odds are the pattern is documented here.
 
 ---
 

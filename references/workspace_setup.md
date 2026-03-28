@@ -22,7 +22,7 @@ Cover these points conversationally (not as a wall of text):
    - The **Reconciliation Pass** — the verification record. Proof that the PRD is consistent with everything it touches.
    Plus any stakeholder deliverables (PDFs, briefs) and a document index tracking versions and dependencies.
 
-3. **What they'll need to provide.** Their product idea (rough is fine), any existing documentation, and decisions along the way. The gauntlet is collaborative — Claude leads with recommendations, but the owner makes every call.
+3. **What they'll need to provide.** Their product idea (rough is fine), any existing documentation, and decisions along the way. The gauntlet is collaborative — the agent leads with recommendations, but the owner makes every call.
 
 4. **Why we're setting up a workspace first.** Everything needs a home before we start producing artifacts. Takes about a minute. They tell us the project name and where they want the folder, and we build the structure.
 
@@ -68,7 +68,7 @@ Over time, this folder becomes the complete spec library for the project. The in
 
 **`index.md`** — The document registry. Tracks every document in the workspace: filename, version, last updated date, dependencies, and validation status. Gets created during Phase 1, updated during Phase 10.
 
-**`project_config.md`** — The project's configuration file. Auto-generated during Phase 1 intake from the owner's answers. Contains: project identity, document ecosystem, terminology standards, distribution targets, and companion doc references. On subsequent gauntlet runs, this file is what makes Phase 1 fast — Claude already knows the landscape. The config grows over time as new PRDs add companion docs and new terminology gets established.
+**`project_config.md`** — The project's configuration file. Auto-generated during Phase 1 intake from the owner's answers. Contains: project identity, document ecosystem, terminology standards, distribution targets, and companion doc references. On subsequent gauntlet runs, this file is what makes Phase 1 fast — the agent already knows the landscape. The config grows over time as new PRDs add companion docs and new terminology gets established.
 
 ## The Project Config
 

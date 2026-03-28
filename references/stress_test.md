@@ -18,7 +18,7 @@ Present findings as: "The premise holds because [evidence]" or "The premise has 
 
 ### Question 2: Is this the right size?
 
-Select one of four modes based on context. Claude recommends; owner decides.
+Select one of four modes based on context. The agent recommends; owner decides.
 
 **Expansion**
 - Default for: greenfield products, new market entry, strategic pivots

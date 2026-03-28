@@ -7,7 +7,7 @@ Quick reference for all phases. Use to verify "am I done with this phase?" befor
 | # | Phase | Mode | Artifact | Exit Criteria |
 |---|-------|------|----------|---------------|
 | 0 | **Workspace Setup** | Scaffolding | Project folder + starter config + index | Owner confirms workspace is set up (first run only) |
-| 1 | **Intake** | Mechanical | Ecosystem summary + process ledger created | Owner confirms Claude understands the landscape |
+| 1 | **Intake** | Mechanical | Ecosystem summary + process ledger created | Owner confirms the agent understands the landscape |
 | 2 | **Define** | Creative | Problem + Solution + Scope | Owner says "locked" |
 | 3 | **Grill-Me** | Interactive | Numbered decision log | Zero open questions |
 | 4 | **Stress Test** | Strategic | Confirmed or reshaped concept | Owner confirms direction |
@@ -26,15 +26,15 @@ Quick reference for all phases. Use to verify "am I done with this phase?" befor
 
 **Phases 1-4: Get the concept right**
 - Intake → Define → Grill-Me → Stress Test
-- Owner makes product decisions. Claude challenges and pressure-tests.
+- Owner makes product decisions. The agent challenges and pressure-tests.
 
 **Phases 5-7: Build the spec**
 - Component Map → User Stories → Draft PRD
-- Claude does the heavy lifting. Owner validates coverage and accuracy.
+- The agent does the heavy lifting. Owner validates coverage and accuracy.
 
 **Phases 8-10: Harden against reality**
 - Adversarial Review → System Validation → Finalize & Distribute
-- Claude stress-tests the PRD against the full document system. Owner resolves findings.
+- The agent stress-tests the PRD against the full document system. Owner resolves findings.
 
 ## Entry Points
 

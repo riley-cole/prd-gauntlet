@@ -9,7 +9,7 @@ Use this format for every finding during Phase 8 (Adversarial Review). Number fi
 **Location:** [Document name, section, story number, or cross-reference]
 **Issue:** [What's wrong — one clear sentence]
 **Evidence:** [Specific text, field name, or behavioral conflict from the document(s)]
-**Recommendation:** [Proposed resolution — Claude's recommendation, presented before the owner decides]
+**Recommendation:** [Proposed resolution — the agent's recommendation, presented before the owner decides]
 **Resolution:** [Locked answer after owner review — filled in during the walkthrough]
 
 ---

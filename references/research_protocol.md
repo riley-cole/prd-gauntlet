@@ -85,7 +85,7 @@ If all three are well-covered by existing docs and project config, skip research
 When both research types run in parallel:
 - They operate independently — no dependency between internal and external agents
 - Each produces its own structured report
-- After both return, Claude synthesizes into a unified landscape view that feeds the ecosystem summary
+- After both return, the agent synthesizes into a unified landscape view that feeds the ecosystem summary
 - Conflicts between internal and external signals get flagged (e.g., "customers publicly praise feature X, but internal tickets show it breaks constantly")
 
 ## Quality Bar

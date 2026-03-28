@@ -1,6 +1,6 @@
 # Operating Rules
 
-Centralized rules governing how Claude operates throughout the gauntlet. These apply across all phases. Phase-specific methodology lives in the individual reference files — this file covers the behavioral, questioning, and quality rules that shape every interaction.
+Centralized rules governing how the agent operates throughout the gauntlet. These apply across all phases. Phase-specific methodology lives in the individual reference files — this file covers the behavioral, questioning, and quality rules that shape every interaction.
 
 Load this file at the start of every gauntlet run. It does not need to be reloaded per phase.
 
@@ -8,13 +8,13 @@ Load this file at the start of every gauntlet run. It does not need to be reload
 
 ## Response Posture
 
-How Claude behaves during every phase of the gauntlet.
+How the agent behaves during every phase of the gauntlet.
 
-**Lead with recommendations, not menus.** Every question comes with a suggested answer and rationale. The owner decides, but Claude goes first. "Here's what I think this should be, based on what I've read" — not "what would you like to do?"
+**Lead with recommendations, not menus.** Every question comes with a suggested answer and rationale. The owner decides, but the agent goes first. "Here's what I think this should be, based on what I've read" — not "what would you like to do?"
 
 **Take positions.** State what you believe and what evidence would change your mind. "I think this should be scoped to single-tenant because [reason]. If you have multi-tenant demand evidence, that changes my recommendation." Hedging helps nobody.
 
-**Push back when warranted.** The owner makes every call, but Claude is a thought partner, not a yes-machine. If a decision seems wrong, say so directly with reasoning. Challenge the strongest version of the owner's claim, not a strawman.
+**Push back when warranted.** The owner makes every call, but the agent is a thought partner, not a yes-machine. If a decision seems wrong, say so directly with reasoning. Challenge the strongest version of the owner's claim, not a strawman.
 
 **Lock as you go.** Every decision is explicitly confirmed before moving on. No ambiguity carries forward. If something is unlocked, it blocks progress until it's resolved.
 
@@ -24,7 +24,7 @@ How Claude behaves during every phase of the gauntlet.
 
 ## Questioning Discipline
 
-How Claude asks questions and gathers information.
+How the agent asks questions and gathers information.
 
 **One question at a time.** Never batch multiple questions into a single message. Ask one, wait for the answer, then ask the next. Batched questions get shallow answers to all of them instead of deep answers to each.
 
@@ -43,7 +43,7 @@ How Claude asks questions and gathers information.
 
 ## Phase Discipline
 
-How Claude manages the overall gauntlet flow.
+How the agent manages the overall gauntlet flow.
 
 **No phase skipping.** Even if a phase feels obvious, do it. The artifact matters. Each phase produces a concrete output that downstream phases depend on. Skipping Phase 1 because "I already know the product" means Phase 9 has no artifact catalog to reconcile against.
 
@@ -57,13 +57,13 @@ How Claude manages the overall gauntlet flow.
 
 ## Context Loading
 
-How Claude gathers information about the project and codebase.
+How the agent gathers information about the project and codebase.
 
 **Read before asking.** Before asking the owner questions, exhaust what can be learned autonomously:
 - Read the project config (if it exists)
 - Read the doc index (if it exists)
 - Read relevant companion documents
-- If a codebase exists: read project-level docs (`README.md`, `CLAUDE.md`, etc.), scan recent git history (`git log --oneline -30`), grep for areas relevant to the owner's idea
+- If a codebase exists: read project-level docs (`README.md`, `CLAUDE.md`, `GEMINI.md`, etc.), scan recent git history (`git log --oneline -30`), grep for areas relevant to the owner's idea
 - Check for existing PRDs in the workspace (`prds/` directory or doc index)
 
 **Surface prior work.** If existing PRDs, design docs, or related specs exist for this project, surface them before starting: "Prior PRDs for this project: [titles + dates]. Should we build on these or start fresh?"
@@ -81,7 +81,7 @@ The stage informs how deep intake goes, which stress test mode to recommend, and
 
 ## Cross-Reference Integrity
 
-How Claude maintains consistency across documents.
+How the agent maintains consistency across documents.
 
 **Cross-reference always.** Before drafting any artifact, read related documents, the entity model, and the doc index. Consistency across the spec suite is non-negotiable.
 
@@ -95,7 +95,7 @@ How Claude maintains consistency across documents.
 
 ## Quality Hygiene
 
-How Claude maintains quality throughout the gauntlet. See `references/gotchas.md` for specific failure patterns to watch for.
+How the agent maintains quality throughout the gauntlet. See `references/gotchas.md` for specific failure patterns to watch for.
 
 **Proof before presenting.** Full validation loop on every artifact before the owner sees it. See `references/quality_bar.md` for the specific proof protocol. If issues are found during the loop, fix them before presenting.
 

@@ -94,7 +94,7 @@ Each integrity check should name the specific items being verified, not just the
 
 ### Step 4: Run the Generated Checklist
 
-1. Present the full generated checklist to the owner before running it. This lets the owner add checks Claude missed or remove checks that don't apply.
+1. Present the full generated checklist to the owner before running it. This lets the owner add checks the agent missed or remove checks that don't apply.
 2. Run each check. For each: PASS (consistent, no changes needed), FAIL (inconsistency found, describe it), or UNRESOLVED (can't verify, describe what's needed).
 3. For each FAIL: describe exactly what needs to change and in which artifact.
 4. Fix all FAILs. Re-run affected checks to confirm PASS.
@@ -142,7 +142,7 @@ The goal is a system that agrees with itself. The engine is how you get there, n
 
 **Artifact can't be read (no access, private repo, external service):** Mark the touchpoint as UNRESOLVED. Document what access is needed. The owner either provides access or accepts the risk of an unchecked touchpoint.
 
-**Owner adds manual checks:** After reviewing the generated checklist, the owner may add checks Claude missed — business rules, contractual obligations, compliance requirements that aren't in any artifact. These are valid checks and get the same PASS/FAIL treatment.
+**Owner adds manual checks:** After reviewing the generated checklist, the owner may add checks the agent missed — business rules, contractual obligations, compliance requirements that aren't in any artifact. These are valid checks and get the same PASS/FAIL treatment.
 
 ## Multi-PRD Reconciliation
 
