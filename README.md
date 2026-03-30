@@ -1,6 +1,6 @@
 # PRD Gauntlet
 
-A Claude Code skill that takes a product concept from zero to a finalized, cross-validated build spec. Ten phases from intake through distribution. A PRD is not done when you finish writing it — it's done when the entire system of documents agrees with it.
+A Claude Code skill that takes a product concept from zero to a finalized, cross-validated build spec. Eleven phases from intake through distribution. A PRD is not done when you finish writing it — it's done when the entire system of documents agrees with it.
 
 ## What It Produces
 
@@ -10,7 +10,7 @@ Three documents that travel together:
 - **Process Ledger** — The reasoning trail. Why it was built this way, what alternatives were considered, what was challenged.
 - **Reconciliation Pass** — The verification record. Proof that the PRD is consistent with everything it touches.
 
-## The Ten Phases
+## The Eleven Phases
 
 | # | Phase | What Happens | Artifact |
 |---|-------|-------------|----------|
@@ -19,12 +19,13 @@ Three documents that travel together:
 | 2 | Define | Draft and lock problem statement, audience, scope | Product definition |
 | 3 | Grill-Me | Walk every decision branch, lock each answer | Numbered decision log |
 | 4 | Stress Test | Is this the right thing at the right size? | Confirmed/reshaped concept |
-| 5 | Component Map | Map every surface, data flow, integration point | Component map with connections |
-| 6 | User Stories | Exhaustive coverage of every actor and edge case | Numbered story list |
-| 7 | Draft PRD | Synthesize everything into a build spec | Complete PRD |
-| 8 | Adversarial Review | Stress-test for gaps, contradictions, conflicts | Updated PRD, zero open findings |
-| 9 | System Validation | Verify full document system consistency | Reconciliation pass, zero FAILs |
-| 10 | Finalize | Package and distribute to stakeholders | Final PRD + companions + deliverables |
+| 5 | Product Vision Brief | Bridge concept to execution — thesis, key moments, reference decomposition, design intent, scope/anti-scope | Vision brief |
+| 6 | Component Map | Map every surface, data flow, integration point | Component map with connections |
+| 7 | User Stories | Exhaustive coverage of every actor and edge case | Numbered story list |
+| 8 | Draft PRD | Synthesize everything into a build spec | Complete PRD |
+| 9 | Adversarial Review | Stress-test for gaps, contradictions, conflicts | Updated PRD, zero open findings |
+| 10 | System Validation | Verify full document system consistency | Reconciliation pass, zero FAILs |
+| 11 | Finalize | Package and distribute to stakeholders | Final PRD + companions + deliverables |
 
 ## Installation
 
@@ -41,7 +42,7 @@ Clone this repo into your Claude Code skills directory:
 cd ~/.claude/skills  # or your preferred skills location
 
 # Clone
-git clone https://github.com/rileycole/prd-gauntlet.git riley-prd-gauntlet
+git clone https://github.com/riley-cole/prd-gauntlet.git riley-prd-gauntlet
 ```
 
 Or copy the skill folder directly into your project's `.skills/` directory:
@@ -69,9 +70,9 @@ You don't have to run the full gauntlet every time:
 | `Start a new PRD` | Phase 0 or 1 depending on config |
 | `Research [topic/market]` | Phase 1 research fork only |
 | `Stress test [concept]` | Phase 4 (concept must be defined) |
-| `Adversarial review on [doc]` | Phase 8 |
-| `Cross-PRD validation` | Phase 9 |
-| `Finalize and ship` | Phase 10 |
+| `Adversarial review on [doc]` | Phase 9 |
+| `Cross-PRD validation` | Phase 10 |
+| `Finalize and ship` | Phase 11 |
 | `Run the full gauntlet` | All phases, start to finish |
 
 ### Project Configs
@@ -91,20 +92,21 @@ riley-prd-gauntlet/
 │   ├── operating_rules.md      # Behavioral rules, questioning discipline
 │   ├── gotchas.md              # Known failure patterns
 │   ├── workspace_setup.md      # Phase 0 methodology
+│   ├── product_vision_brief.md # Phase 5: guided extraction process
 │   ├── prd_format.md           # PRD structure and section order
 │   ├── quality_bar.md          # Quality standards, banned phrases, proof protocol
 │   ├── research_protocol.md    # Phase 1 research agent methodology
 │   ├── build_sequence.md       # Section 8: vertical slices, integration boundaries
 │   ├── stress_test.md          # Phase 4: three questions, four modes
-│   ├── adversarial_review.md   # Phase 8: finding categories, audit process
-│   ├── reconciliation_checklist.md  # Phase 9: dynamic reconciliation engine
-│   └── distribution_map.md     # Phase 10: output routing
+│   ├── adversarial_review.md   # Phase 9: finding categories, audit process
+│   ├── reconciliation_checklist.md  # Phase 10: dynamic reconciliation engine
+│   └── distribution_map.md     # Phase 11: output routing
 ├── templates/                  # Reusable artifact scaffolds
 │   ├── prd_skeleton.md         # Blank PRD with all sections
 │   ├── project_config.md       # Project config scaffold
 │   ├── process_ledger.md       # Reasoning trail template
-│   ├── adversarial_finding.md  # Finding format for Phase 8
-│   ├── reconciliation_pass.md  # Verification checklist for Phase 9
+│   ├── adversarial_finding.md  # Finding format for Phase 9
+│   ├── reconciliation_pass.md  # Verification checklist for Phase 10
 │   └── phase_checklist.md      # Quick-reference for all phases
 ├── scripts/                    # Hook scripts (automated quality enforcement)
 │   ├── proof-gate.sh           # Blocks writes to prds/ without proof protocol
@@ -129,13 +131,15 @@ riley-prd-gauntlet/
 
 ## Key Concepts
 
-**Obligation tags** — During the grill-me (Phase 3), decisions that affect external artifacts get tagged with what they touch. These tags feed the reconciliation engine in Phase 9.
+**Product Vision Brief** — Phase 5 bridges concept (Phases 1-4) to execution (Phases 6-8). Seven rounds of guided extraction: Product Thesis, User and Their World, Key Moments, Reference Decomposition, Design Intent, Scope and Anti-Scope, Open Questions. Reference Decomposition cannot be skipped — it's where vague inspirations become actionable design direction.
 
-**NEW/MODIFY classification** — The component map (Phase 5) classifies each component. MODIFY components require reconciliation against the existing artifact. NEW components don't.
+**Obligation tags** — During the grill-me (Phase 3), decisions that affect external artifacts get tagged with what they touch. These tags feed the reconciliation engine in Phase 10.
+
+**NEW/MODIFY classification** — The component map (Phase 6) classifies each component. MODIFY components require reconciliation against the existing artifact. NEW components don't.
 
 **Walking skeleton** — The first vertical slice in the Build Sequence is always the thinnest possible end-to-end path. Proves the architecture before investing in breadth.
 
-**Dynamic reconciliation** — Phase 9 doesn't run a fixed checklist. It generates a custom checklist from the actual work done in Phases 1-8. Every check names the specific artifact, field, or behavior being verified.
+**Dynamic reconciliation** — Phase 10 doesn't run a fixed checklist. It generates a custom checklist from the actual work done in Phases 1-9. Every check names the specific artifact, field, or behavior being verified.
 
 ## License
 
