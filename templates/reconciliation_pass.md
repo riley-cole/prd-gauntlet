@@ -15,8 +15,8 @@ Summary of where checks originated. Every check below traces back to one of thes
 | Source | Type | Touchpoints Found |
 |--------|------|-------------------|
 | Phase 3 — Decision Log | Obligation tags | [count] |
-| Phase 7 — Dependency Tables | Consumes/Provides rows | [count] |
-| Phase 5 — Component Map | MODIFY components | [count] |
+| Phase 9 — Dependency Tables | Consumes/Provides rows | [count] |
+| Phase 7 — Component Map | MODIFY components | [count] |
 | Owner — Manual Additions | Owner-added checks | [count] |
 
 ---

@@ -1,6 +1,6 @@
 # Adversarial Review
 
-Methodology for Phase 8. This is not a proofreading pass. This is an engineering-lead review: "Can I build exactly what this says without asking a single follow-up question?"
+Methodology for Phase 10. This is not a proofreading pass. This is an engineering-lead review: "Can I build exactly what this says without asking a single follow-up question?"
 
 ## Finding Categories
 

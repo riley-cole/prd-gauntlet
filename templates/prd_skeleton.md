@@ -71,7 +71,7 @@
 | Document | Filename | Purpose |
 |----------|----------|---------|
 | Process Ledger | [prd_filename]_process_ledger.md | Reasoning trail: ecosystem snapshot, decision log with rationale, stress test alternatives, adversarial findings, reconciliation results |
-| Reconciliation Pass | [prd_filename]_reconciliation_pass.md | Detailed verification record from system validation (Phase 9) |
+| Reconciliation Pass | [prd_filename]_reconciliation_pass.md | Detailed verification record from system validation (Phase 11) |
 | [name] | [filename] | [what this doc provides in context of this PRD] |
 
 ## 8. Build Sequence

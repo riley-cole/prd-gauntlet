@@ -14,7 +14,7 @@ Before scaffolding, give the owner a brief orientation on what they're about to 
 
 Cover these points conversationally (not as a wall of text):
 
-1. **What this is.** A structured process for turning a product idea into a finalized build spec that an engineering team can execute against without follow-up questions. Ten phases from concept to cross-validated document.
+1. **What this is.** A structured process for turning a product idea into a finalized build spec that an engineering team can execute against without follow-up questions. Eleven phases from concept to cross-validated document.
 
 2. **What they'll get at the end.** Three documents that travel together:
    - The **PRD** — the build spec. What to build, why, and in what order.
@@ -66,7 +66,7 @@ Over time, this folder becomes the complete spec library for the project. The in
 
 **`source_docs/`** — A place for the owner to put (or link to) the input documents they provide during intake: existing specs, design mockups, data dictionaries, competitive analyses they've already done, notes, prior art. The gauntlet reads from here but never writes to it. This is the owner's input, preserved as-is.
 
-**`index.md`** — The document registry. Tracks every document in the workspace: filename, version, last updated date, dependencies, and validation status. Gets created during Phase 1, updated during Phase 10.
+**`index.md`** — The document registry. Tracks every document in the workspace: filename, version, last updated date, dependencies, and validation status. Gets created during Phase 1, updated during Phase 12.
 
 **`project_config.md`** — The project's configuration file. Auto-generated during Phase 1 intake from the owner's answers. Contains: project identity, document ecosystem, terminology standards, distribution targets, and companion doc references. On subsequent gauntlet runs, this file is what makes Phase 1 fast — the agent already knows the landscape. The config grows over time as new PRDs add companion docs and new terminology gets established.
 

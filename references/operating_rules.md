@@ -33,7 +33,7 @@ How the agent asks questions and gathers information.
 **Push once, then push again.** The first answer to a question is usually the polished version. The real answer comes after a follow-up. "You said 'small businesses' — can you name one specific business you've talked to?" If the second answer is still vague, accept it and note the gap rather than pushing a third time.
 
 **Escape hatch.** If the owner expresses impatience or wants to skip ahead:
-1. Push back once with a reason: "The ecosystem summary matters because it feeds the reconciliation engine in Phase 9. Skipping it means we can't verify consistency later. Let me ask two more questions, then we'll move."
+1. Push back once with a reason: "The ecosystem summary matters because it feeds the reconciliation engine in Phase 11. Skipping it means we can't verify consistency later. Let me ask two more questions, then we'll move."
 2. If the owner pushes back again, respect it. Run a lighter version of the current phase — capture what you can and note what's missing. Don't ask a third time.
 3. Never skip Phase 3 (Grill-Me) entirely — decisions must be locked before building the spec. The escape hatch allows acceleration, not elimination.
 
@@ -45,7 +45,7 @@ How the agent asks questions and gathers information.
 
 How the agent manages the overall gauntlet flow.
 
-**No phase skipping.** Even if a phase feels obvious, do it. The artifact matters. Each phase produces a concrete output that downstream phases depend on. Skipping Phase 1 because "I already know the product" means Phase 9 has no artifact catalog to reconcile against.
+**No phase skipping.** Even if a phase feels obvious, do it. The artifact matters. Each phase produces a concrete output that downstream phases depend on. Skipping Phase 1 because "I already know the product" means Phase 10 has no artifact catalog to reconcile against.
 
 **Exit criteria are gates.** Every phase has explicit exit criteria. Do not move to the next phase until the current phase's exit criteria are met and the owner signs off. If exit criteria can't be met, document why and get the owner's explicit decision to proceed with the gap.
 
@@ -75,7 +75,7 @@ How the agent gathers information about the project and codebase.
 
 The stage informs how deep intake goes, which stress test mode to recommend, and how much existing context is available to load.
 
-**Catalog everything.** The ecosystem summary must include all artifacts, not just documents: code files, services, API contracts, configs, schemas, external integrations. Everything cataloged becomes a potential reconciliation touchpoint in Phase 9.
+**Catalog everything.** The ecosystem summary must include all artifacts, not just documents: code files, services, API contracts, configs, schemas, external integrations. Everything cataloged becomes a potential reconciliation touchpoint in Phase 10.
 
 ---
 
@@ -99,11 +99,11 @@ How the agent maintains quality throughout the gauntlet. See `references/gotchas
 
 **Proof before presenting.** Full validation loop on every artifact before the owner sees it. See `references/quality_bar.md` for the specific proof protocol. If issues are found during the loop, fix them before presenting.
 
-**A PRD is done when the system agrees.** Phase 7 produces a draft. Phase 9 produces a finalized system. The distance between those two is where the real work happens. A PRD that contradicts its companion documents is not done.
+**A PRD is done when the system agrees.** Phase 9 produces a draft. Phase 11 produces a finalized system. The distance between those two is where the real work happens. A PRD that contradicts its companion documents is not done.
 
 **No dead AI language.** Banned phrases are fatal in any external deliverable. See `references/quality_bar.md` for the full list. Check project config for additional voice/style rules.
 
-**No "TBD" in finalized artifacts.** Resolve it or move it to Out of Scope with a rationale. Open questions are acceptable during drafting phases (5-7) but must be closed before Phase 8 exits.
+**No "TBD" in finalized artifacts.** Resolve it or move it to Out of Scope with a rationale. Open questions are acceptable during drafting phases (7-9) but must be closed before Phase 10 exits.
 
 **Specific over general.** Every claim, every example, every reference should be as specific as possible. "Most users" is weaker than "78% of users." "The settings page" is weaker than "the Notification Preferences section of the settings page."
 

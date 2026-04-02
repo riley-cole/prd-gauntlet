@@ -1,6 +1,6 @@
 # Distribution Map
 
-Output routing framework for Phase 10 (Finalize & Distribute). Defines the categories of outputs and when each is triggered. Specific file paths and destinations come from the project config.
+Output routing framework for Phase 12 (Finalize & Distribute). Defines the categories of outputs and when each is triggered. Specific file paths and destinations come from the project config.
 
 ## Output Categories
 
@@ -11,10 +11,11 @@ Move the PRD to the project's designated PRD directory. If it was already there,
 
 ### 2. Process Ledger and Reconciliation Pass
 Store both companion artifacts alongside the PRD in the same directory:
-- **Process Ledger:** `[prd_filename]_process_ledger.md` — the reasoning trail built across Phases 1-9
-- **Reconciliation Pass:** `[prd_filename]_reconciliation_pass.md` — the detailed verification record from Phase 9
+- **Process Ledger:** `[prd_filename]_process_ledger.md` — the reasoning trail built across Phases 1-11
+- **Reconciliation Pass:** `[prd_filename]_reconciliation_pass.md` — the detailed verification record from Phase 11
+- **Council Synthesis:** `[prd_filename]_council_synthesis.md` — strategic council findings and resolutions from Phase 6 (only if council was convened)
 
-Both must be referenced in the PRD's Companion Documents table (Section 7). Both must be listed in the doc index.
+All must be referenced in the PRD's Companion Documents table (Section 7). All must be listed in the doc index.
 
 **Trigger:** Every PRD, every time. These are not optional.
 
@@ -52,7 +53,7 @@ Update the project's open items tracker:
 **Trigger:** Always.
 
 ### 6. Decision Log
-Capture major decisions from the grill-me (Phase 3), stress test (Phase 4), and adversarial review (Phase 8).
+Capture major decisions from the grill-me (Phase 3), stress test (Phase 4), strategic council (Phase 6), and adversarial review (Phase 10).
 
 A "major decision" is one that:
 - Changes the product direction or scope

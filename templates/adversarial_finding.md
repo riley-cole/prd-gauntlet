@@ -1,6 +1,6 @@
 # Adversarial Finding Template
 
-Use this format for every finding during Phase 8 (Adversarial Review). Number findings sequentially. Group by category within severity level.
+Use this format for every finding during Phase 10 (Adversarial Review). Number findings sequentially. Group by category within severity level.
 
 ---
 

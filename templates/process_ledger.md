@@ -4,7 +4,7 @@
 **Created:** [YYYY-MM-DD]
 **Last Updated:** [YYYY-MM-DD]
 **Author:** [who ran the gauntlet]
-**Phases completed:** [list which phases were run, e.g., "1-10 (full gauntlet)" or "8-10 (adversarial review entry)"]
+**Phases completed:** [list which phases were run, e.g., "1-12 (full gauntlet)" or "10-12 (adversarial review entry)"]
 
 ---
 
@@ -107,7 +107,47 @@ Obligation tag: [if applicable — artifact touched, location, current state]
 
 ---
 
-## Phase 5: Component Map
+## Phase 5: Product Vision Brief
+
+**Completed:** [YYYY-MM-DD]
+
+### References Decomposed
+
+<!-- Source documents, prior art, and reference materials analyzed to inform the vision brief. -->
+
+### Design Intent Decisions
+
+<!-- Key design intent decisions locked during this phase. What the product should feel like, how it should behave at a high level. -->
+
+### Scope Philosophy Statement
+
+<!-- The guiding principle for what's in and what's out. Not the detailed scope boundary (that's in the PRD) but the philosophy driving scope decisions. -->
+
+### Key Moments Identified
+
+<!-- Critical user moments that the product must get right. The moments that define whether the product succeeds or fails from the user's perspective. -->
+
+---
+
+## Phase 6: Strategic Council
+
+**Completed:** [YYYY-MM-DD]
+**Council size:** [count] advisors
+**Verdict:** [Proceed / Proceed with Conditions / Revisit]
+
+<!-- Multi-perspective strategic review. Each advisor's assessment, the verdict, any dissents, and conditions imposed. -->
+
+### Advisor Assessments
+
+<!-- For each advisor: their domain lens, key concerns, opportunities identified, and individual verdict. -->
+
+### Verdict & Conditions
+
+<!-- The overall council verdict, any dissenting opinions, and conditions that must be met before proceeding. -->
+
+---
+
+## Phase 7: Component Map
 
 **Completed:** [YYYY-MM-DD]
 **Components:** [count total] ([count] NEW, [count] MODIFY)
@@ -124,7 +164,7 @@ Obligation tag: [if applicable — artifact touched, location, current state]
 
 ---
 
-## Phase 6: Coverage Decisions
+## Phase 8: Coverage Decisions
 
 **Completed:** [YYYY-MM-DD]
 **Stories written:** [count]
@@ -139,13 +179,13 @@ Obligation tag: [if applicable — artifact touched, location, current state]
 
 ---
 
-## Phase 7: Assembly Decisions
+## Phase 9: Assembly Decisions
 
 **Completed:** [YYYY-MM-DD]
 **PRD version:** [v1]
 **Status at draft:** [e.g., "v1 — pending adversarial review"]
 
-<!-- Judgment calls made while synthesizing the PRD from Phases 1-6. These are the decisions that don't belong to any single earlier phase but emerge during assembly. -->
+<!-- Judgment calls made while synthesizing the PRD from Phases 1-8. These are the decisions that don't belong to any single earlier phase but emerge during assembly. -->
 
 ### Scope Boundary Calls
 
@@ -161,7 +201,7 @@ Obligation tag: [if applicable — artifact touched, location, current state]
 
 ---
 
-## Phase 8: Adversarial Findings
+## Phase 10: Adversarial Findings
 
 **Completed:** [YYYY-MM-DD]
 **Findings:** [count total] ([count] Blocker, [count] Warning, [count] Editorial)
@@ -181,7 +221,7 @@ Resolution: [what was decided and changed]
 
 ---
 
-## Phase 9: Reconciliation Results
+## Phase 11: Reconciliation Results
 
 **Completed:** [YYYY-MM-DD]
 **Touchpoints checked:** [count]
@@ -211,4 +251,6 @@ Resolution: [what was decided and changed]
 | Phase 8 completed | [YYYY-MM-DD] | [who] |
 | Phase 9 completed | [YYYY-MM-DD] | [who] |
 | Phase 10 completed | [YYYY-MM-DD] | [who] |
+| Phase 11 completed | [YYYY-MM-DD] | [who] |
+| Phase 12 completed | [YYYY-MM-DD] | [who] |
 | PRD finalized | [YYYY-MM-DD] | [who] |

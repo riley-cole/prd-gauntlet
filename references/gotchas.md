@@ -18,7 +18,7 @@ Real failure patterns from running the gauntlet. Each gotcha describes a specifi
 
 **The failure:** Producing an ecosystem summary that reads like a product marketing page. "The platform serves multiple user types with configurable settings." That tells nobody anything.
 
-**Why it matters:** The ecosystem summary feeds Phase 9's reconciliation engine. Every artifact cataloged here becomes a reconciliation touchpoint. A vague summary produces vague touchpoints produces a checklist that catches nothing.
+**Why it matters:** The ecosystem summary feeds Phase 11's reconciliation engine. Every artifact cataloged here becomes a reconciliation touchpoint. A vague summary produces vague touchpoints produces a checklist that catches nothing.
 
 **What to do instead:** Name every artifact. Use filenames, not descriptions. Count things — "3 existing PRDs, 1 entity model, 2 API contracts, 14 config files." Reference the specific docs, code files, services, configs, and schemas. If you can't name it, you haven't loaded it.
 
@@ -26,7 +26,7 @@ Real failure patterns from running the gauntlet. Each gotcha describes a specifi
 
 ## Skipping the Reconciliation Engine
 
-**The failure:** Treating Phase 9 as a formality. Running a quick "does this look consistent?" pass instead of actually collecting touchpoints from Phases 3/5/7, resolving each artifact, and generating specific checks.
+**The failure:** Treating Phase 11 as a formality. Running a quick "does this look consistent?" pass instead of actually collecting touchpoints from Phases 3/7/9, resolving each artifact, and generating specific checks.
 
 **Why it matters:** The reconciliation engine is where the gauntlet earns its keep. A PRD that contradicts its companion documents is worse than no PRD — it creates confident wrongness. The engine is the only thing standing between "draft is done" and "system agrees."
 
@@ -38,7 +38,7 @@ Real failure patterns from running the gauntlet. Each gotcha describes a specifi
 
 **The failure:** During Phase 3, locking a decision that affects an external artifact without tagging what it touches. "We'll use real-time notifications" — locked, move on. But nobody tagged that this changes `notification_service.py` and `notification_policy.md`.
 
-**Why it matters:** Phase 9's reconciliation engine collects touchpoints from obligation tags. No tag means no touchpoint means no check means the external artifact silently disagrees with the PRD.
+**Why it matters:** Phase 11's reconciliation engine collects touchpoints from obligation tags. No tag means no touchpoint means no check means the external artifact silently disagrees with the PRD.
 
 **What to do instead:** Every decision that changes something outside this PRD gets a tag: what artifact it touches, where that artifact lives, and what the current state is. If you're not sure whether a decision has external impact, it probably does.
 
@@ -56,7 +56,7 @@ Real failure patterns from running the gauntlet. Each gotcha describes a specifi
 
 ## Losing the Process Ledger Mid-Gauntlet
 
-**The failure:** Creating the process ledger in Phase 1, then forgetting to append sections in Phases 2-5, then trying to reconstruct everything from memory during Phase 8.
+**The failure:** Creating the process ledger in Phase 1, then forgetting to append sections in Phases 2-7, then trying to reconstruct everything from memory during Phase 10.
 
 **Why it matters:** The process ledger is the reasoning trail. It records why decisions were made, what alternatives were rejected, and what obligations were identified. Reconstructing it after the fact produces a sanitized narrative, not an honest record.
 
@@ -90,7 +90,7 @@ Real failure patterns from running the gauntlet. Each gotcha describes a specifi
 
 **Why it matters:** Empty states are the first thing users see. They're also the states most likely to trigger confusion or support tickets. An unspecified empty state gets whatever the engineer thinks is reasonable, which is usually a blank page.
 
-**What to do instead:** The adversarial review in Phase 8 checks for this explicitly. But don't wait for Phase 8. During story writing in Phase 6, ask for every surface: "What does this look like with zero data?" Add a system story for each empty state.
+**What to do instead:** The adversarial review in Phase 10 checks for this explicitly. But don't wait for Phase 10. During story writing in Phase 8, ask for every surface: "What does this look like with zero data?" Add a system story for each empty state.
 
 ---
 
@@ -100,7 +100,7 @@ Real failure patterns from running the gauntlet. Each gotcha describes a specifi
 
 **Why it matters:** Engineers build what the spec says. If the spec uses three names for one thing, they may build three things — or, more likely, pick one name and leave the other two as dead references that confuse everyone later.
 
-**What to do instead:** Establish terminology in Phase 1 (from the project config or during intake). Use those exact terms everywhere. The reconciliation engine in Phase 9 checks terminology consistency, but catching drift early is cheaper than fixing it in Phase 9.
+**What to do instead:** Establish terminology in Phase 1 (from the project config or during intake). Use those exact terms everywhere. The reconciliation engine in Phase 11 checks terminology consistency, but catching drift early is cheaper than fixing it in Phase 11.
 
 ---
 

@@ -1,6 +1,6 @@
 # Reconciliation Engine
 
-Dynamic reconciliation methodology for Phase 9 (System Validation). Instead of running a fixed checklist, this engine generates a custom checklist from the actual work done in Phases 1-8. Every check is specific to what was built, references the actual artifact it touches, and tells you exactly what to verify.
+Dynamic reconciliation methodology for Phase 11 (System Validation). Instead of running a fixed checklist, this engine generates a custom checklist from the actual work done in Phases 1-10. Every check is specific to what was built, references the actual artifact it touches, and tells you exactly what to verify.
 
 Use `templates/reconciliation_pass.md` to record results.
 
@@ -15,12 +15,12 @@ Every decision tagged with an external obligation becomes a touchpoint. The tag 
 
 Example: "Decision 14: Changed notification delivery from batch to real-time → touches `notification_service.py` (line 247, processes notifications in batch) and `notification_policy.md` (Section 3, describes batch delivery rules)"
 
-**Source B — PRD Dependency Tables (Phase 7)**
+**Source B — PRD Dependency Tables (Phase 9)**
 Every row in the "Consumes" and "Provides" tables is a touchpoint. The PRD explicitly declares what it reads from and writes to.
 
 Example: "Consumes `user.permission_level` from Auth Service schema" / "Provides `analytics_summary` event to the notification queue"
 
-**Source C — MODIFY Components (Phase 5)**
+**Source C — MODIFY Components (Phase 7)**
 Every component classified as MODIFY in the component map is a touchpoint. Something already exists and this PRD changes it.
 
 Example: "MODIFY: Dashboard view — currently shows 3 summary cards, PRD adds 2 more cards and changes the layout"
@@ -98,7 +98,7 @@ Each integrity check should name the specific items being verified, not just the
 2. Run each check. For each: PASS (consistent, no changes needed), FAIL (inconsistency found, describe it), or UNRESOLVED (can't verify, describe what's needed).
 3. For each FAIL: describe exactly what needs to change and in which artifact.
 4. Fix all FAILs. Re-run affected checks to confirm PASS.
-5. Zero FAILs and zero UNRESOLVED before proceeding to Phase 10.
+5. Zero FAILs and zero UNRESOLVED before proceeding to Phase 12.
 
 ## What Makes a Good Check
 
@@ -118,8 +118,9 @@ This engine depends on structured outputs from earlier phases. If these outputs 
 |-------|---------------------|---------|
 | Phase 1 (Intake) | Artifact catalog — every doc, code file, service, config, and external integration in the ecosystem | Touchpoint resolution |
 | Phase 3 (Grill-Me) | Decision log with obligation tags — what external artifact each decision touches, where it lives, current state | Touchpoint collection |
-| Phase 5 (Component Map) | NEW/MODIFY classification for each component — MODIFY components reference the existing artifact | Touchpoint collection |
-| Phase 7 (Draft PRD) | Dependency tables (consumes/provides) and Build Sequence integration boundaries | Touchpoint collection |
+| Phase 6 (Strategic Council) | Council findings log — accepted revisions, rejected findings with rationale, strategic assumptions validated or challenged | Cross-reference validation |
+| Phase 7 (Component Map) | NEW/MODIFY classification for each component — MODIFY components reference the existing artifact | Touchpoint collection |
+| Phase 9 (Draft PRD) | Dependency tables (consumes/provides) and Build Sequence integration boundaries | Touchpoint collection |
 
 If a phase didn't produce the required output (e.g., intake didn't catalog code because there was no codebase), the engine works with what's available. It doesn't fail — it just has fewer touchpoints to check.
 
@@ -146,7 +147,7 @@ The goal is a system that agrees with itself. The engine is how you get there, n
 
 ## Multi-PRD Reconciliation
 
-When multiple PRDs share a product ecosystem, Phase 9 expands from per-PRD validation to cross-system reconciliation. The engine methodology is the same — collect touchpoints, resolve artifacts, generate checks, run the checklist — but the scope is wider.
+When multiple PRDs share a product ecosystem, Phase 11 expands from per-PRD validation to cross-system reconciliation. The engine methodology is the same — collect touchpoints, resolve artifacts, generate checks, run the checklist — but the scope is wider.
 
 ### When to Run Cross-System Reconciliation
 

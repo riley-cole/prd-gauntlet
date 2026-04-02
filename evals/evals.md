@@ -11,10 +11,10 @@ Test scenarios for each entry point. Use these to verify the skill loads the rig
 - Phase 2: Drafts product definition positioned against existing surfaces and companion docs.
 - Phase 3: Grill-me produces 15-30 locked decisions. External obligations tagged with artifact references.
 - Phase 4: Recommends scope mode based on concept size. Runs three questions.
-- Phases 5-7: Component map (with NEW/MODIFY classifications), stories, draft PRD using skeleton and format references.
-- Phase 8: Adversarial review loads all companion docs, finds 10-40 items, walks each. Findings appended to process ledger.
-- Phase 9: Reconciliation engine collects touchpoints from Phases 3/5/7, generates checks, runs them. Zero FAILs.
-- Phase 10: Stores PRD, process ledger, and reconciliation pass. Distributes per project config targets.
+- Phases 7-9: Component map (with NEW/MODIFY classifications), stories, draft PRD using skeleton and format references.
+- Phase 10: Adversarial review loads all companion docs, finds 10-40 items, walks each. Findings appended to process ledger.
+- Phase 11: Reconciliation engine collects touchpoints from Phases 3/7/9, generates checks, runs them. Zero FAILs.
+- Phase 12: Stores PRD, process ledger, and reconciliation pass. Distributes per project config targets.
 
 ## Scenario 2: Full Gauntlet (cold start, no config)
 
@@ -24,10 +24,10 @@ Test scenarios for each entry point. Use these to verify the skill loads the rig
 - Phase 0: No project config found. Briefs the owner on the gauntlet process. Asks for project name and workspace location. Scaffolds folder structure (`prds/`, `research/`, `deliverables/`, `source_docs/`, `index.md`, `project_config.md`). Confirms with owner.
 - Phase 1: Asks structured intake questions. Populates the project config as answers come in. Assesses research need (likely recommends external research for new market). Creates process ledger.
 - Phase 2: Drafts product definition using research findings for positioning.
-- Proceeds through all 10 phases. Distribution targets default to the workspace structure created in Phase 0.
-- Phase 10: PRD, process ledger, and reconciliation pass stored in `prds/`. Index updated. Config now reflects everything learned — ready for future gauntlet runs without Phase 0.
+- Proceeds through all 12 phases. Distribution targets default to the workspace structure created in Phase 0.
+- Phase 12: PRD, process ledger, and reconciliation pass stored in `prds/`. Index updated. Config now reflects everything learned — ready for future gauntlet runs without Phase 0.
 
-## Scenario 3: Adversarial Review (Phase 8 entry)
+## Scenario 3: Adversarial Review (Phase 10 entry)
 
 **Trigger:** "Adversarial review on [existing PRD filename]"
 **Project:** Any (with or without config)
@@ -38,7 +38,7 @@ Test scenarios for each entry point. Use these to verify the skill loads the rig
 - Formats findings per `templates/adversarial_finding.md`
 - Presents blockers first, then warnings, then editorial
 - Each finding has recommendation. Walks one by one.
-- Creates process ledger with Phase 8 section (or appends if ledger exists)
+- Creates process ledger with Phase 10 section (or appends if ledger exists)
 
 ## Scenario 4: Research Only (Phase 1, Step 2 entry)
 
@@ -62,7 +62,7 @@ Test scenarios for each entry point. Use these to verify the skill loads the rig
 - Produces stress test summary with direction (confirmed/reshaped/killed)
 - Appends Phase 4 section to process ledger
 
-## Scenario 6: Cross-PRD Validation (Phase 9 entry)
+## Scenario 6: Cross-PRD Validation (Phase 11 entry)
 
 **Trigger:** "Cross-PRD validation after updating [document name]"
 **Project:** Any (with config preferred — needs doc index for dependency mapping)
@@ -74,7 +74,7 @@ Test scenarios for each entry point. Use these to verify the skill loads the rig
 - Records in `templates/reconciliation_pass.md`
 - Zero FAILs before declaring complete
 
-## Scenario 7: Finalize (Phase 10 entry)
+## Scenario 7: Finalize (Phase 12 entry)
 
 **Trigger:** "Finalize and ship the [PRD name]"
 **Project:** Any
@@ -96,27 +96,27 @@ Test scenarios for each entry point. Use these to verify the skill loads the rig
 - Loops back to Phase 3 for a targeted re-grill — only the invalidated decisions, not the full decision tree.
 - New/changed decisions get new obligation tags where applicable.
 - Process ledger captures: Phase 4 reshape notes, then Phase 3 re-grill as a clearly labeled loop-back (not overwriting the original Phase 3 section).
-- Proceeds to Phase 5 with the updated concept and decision log.
+- Proceeds to Phase 7 with the updated concept and decision log.
 
 ## Scenario 9: Adversarial Finding Invalidates a Phase 3 Decision
 
-**Trigger:** Full gauntlet run where Phase 8 reveals a contradiction with a locked decision
+**Trigger:** Full gauntlet run where Phase 10 reveals a contradiction with a locked decision
 **Project:** Any (with companion docs)
 **Expected behavior:**
-- Phases 1-7 complete normally.
-- Phase 8: Cross-document validation finds that a Phase 3 decision contradicts a companion doc. The finding is a Blocker (Category 1: Direct Contradiction).
+- Phases 1-9 complete normally.
+- Phase 10: Cross-document validation finds that a Phase 3 decision contradicts a companion doc. The finding is a Blocker (Category 1: Direct Contradiction).
 - Resolution options presented to owner: change the PRD, change the companion doc, or revisit the original decision.
 - If the owner chooses to revisit: The agent documents the loop-back in the process ledger, re-grills the specific decision with the new evidence, locks a revised answer.
-- The revised decision may create new obligation tags requiring Phase 9 to check additional touchpoints.
-- Phase 8 continues with remaining findings after the loop-back is resolved.
+- The revised decision may create new obligation tags requiring Phase 11 to check additional touchpoints.
+- Phase 10 continues with remaining findings after the loop-back is resolved.
 
 ## Scenario 10: Late Entry with No Workspace (Lightweight Phase 0)
 
 **Trigger:** "Adversarial review on this doc" — owner provides a PRD file but no project config or workspace exists
 **Project:** None
 **Expected behavior:**
-- No project config found. The agent needs to run Phase 8 but has no workspace context.
+- No project config found. The agent needs to run Phase 10 but has no workspace context.
 - Runs a lightweight Phase 0: creates a minimal workspace alongside the existing PRD file (or in cwd). Scaffolds the folder structure. Creates a starter config populated with whatever can be inferred from the PRD itself (product name, audience from the header block, companion docs from Section 7).
 - Does NOT run the full Phase 0 briefing — the owner asked for adversarial review, not the gauntlet. Keep it fast.
-- Proceeds to Phase 8. Attempts to load companion docs referenced in the PRD's dependency tables. Flags any that can't be found as UNRESOLVED.
-- Creates process ledger with Phase 8 section only.
+- Proceeds to Phase 10. Attempts to load companion docs referenced in the PRD's dependency tables. Flags any that can't be found as UNRESOLVED.
+- Creates process ledger with Phase 10 section only.

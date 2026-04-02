@@ -33,7 +33,7 @@ See `references/quality_bar.md` for the full proof protocol context.
 
 The process ledger is append-only. Never backfill or rewrite earlier sections based on later decisions. If the ledger hasn't been updated for the current phase, update it before moving on.
 
-Phases that require ledger updates: 1, 2, 3, 4, 5, 6, 7, 8, 9. Phase 10 finalizes the ledger's Provenance table.
+Phases that require ledger updates: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11. Phase 12 finalizes the ledger's Provenance table.
 
 ---
 

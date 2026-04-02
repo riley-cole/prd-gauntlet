@@ -44,6 +44,13 @@ These are dead AI language patterns. Fatal in any external deliverable. Remove o
 - "This isn't X. This is Y." (negation-then-assertion — delete the negation, state the positive claim directly)
 - "Furthermore / Additionally / Moreover / Moving forward"
 
+**Weasel words (replace with data or cut):**
+- "Significant improvement" / "significantly better" / "significantly reduced"
+- "Nearly all" / "most" / "many" / "a number of" / "several"
+- "Would help" / "might bring" / "should result in" / "could improve"
+- "Arguably" / "relatively" / "fairly" / "quite"
+- "Low latency" / "high performance" / "fast" (without a number)
+
 **Word swaps:**
 - Leverage → Use
 - Solutions → Tools
@@ -56,7 +63,11 @@ These are dead AI language patterns. Fatal in any external deliverable. Remove o
 ## Writing Standards
 
 - Professional but not stiff
-- Short sentences, strong verbs, no filler
+- Short sentences (30-word ceiling), strong verbs, no filler
+- Subject-verb-object as default structure. Who does what. No passive voice burying the actor.
 - Specific over general — always
-- If a number exists, use it. "Most users" is weaker than "78% of users"
+- Replace adjectives with data. "Most users" is weaker than "78% of users." "Fast response time" is nothing. "p95 response under 200ms" is something.
+- No weasel words. "Significant," "nearly all," "arguably," "should result in" — these are not specifications. They're placeholders for thinking you haven't done. Replace with a number or cut the sentence.
 - Technical concepts in plain language — no jargon for jargon's sake
+- The so-what test applies to every section. If a reader can't tell why this section exists and what it means for implementation, it's not done.
+- Supporting context that isn't core to the spec goes in an appendix or companion doc, not inline. PRDs get bloated when every data point lives in the body.

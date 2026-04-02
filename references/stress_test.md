@@ -1,6 +1,6 @@
 # Stress Test
 
-Strategic checkpoint methodology for Phase 4. After the grill-me produces a settled concept with locked decisions, this phase asks: "Before we spend six phases turning this into a build spec — is this the right thing at the right altitude?"
+Strategic checkpoint methodology for Phase 4. After the grill-me produces a settled concept with locked decisions, this phase asks: "Before we spend seven phases turning this into a build spec — is this the right thing at the right altitude?"
 
 This is a product-level pressure test, not a technical review.
 
@@ -65,7 +65,7 @@ Explicit recommendation with rationale. The settled concept (Approach A) may win
 
 Three possible results:
 
-1. **Confirmed** — The concept is right. Proceed to Phase 5 (Component Map) with no changes. Document: "Stress test passed. Concept confirmed as-is."
+1. **Confirmed** — The concept is right. Proceed to Phase 5 (Product Vision Brief) with no changes. Document: "Stress test passed. Concept confirmed as-is."
 
 2. **Reshaped** — The concept changes. Document every specific change and why. If changes invalidate locked decisions from Phase 3 (Grill-Me), list which decisions need re-grilling and loop back to a targeted Phase 3 before proceeding.
 
